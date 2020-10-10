@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Posts } from '../../models/Posts'
+import { Post } from '../../models/Posts'
 import { PostService } from '../../services/post.service'
 
 @Component({
@@ -8,12 +8,15 @@ import { PostService } from '../../services/post.service'
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  posts:Posts[]
+  posts:Post[]
 
   constructor(private postService:PostService) { }
 
   ngOnInit(): void {
-    this.posts = this.postService.getPosts();
+    this.postService.getPosts().subscribe(posts => {
+      this.posts = posts;
+      console.log(this.posts)
+    });
   }
 
 }
