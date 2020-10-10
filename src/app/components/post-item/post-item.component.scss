@@ -24,3 +24,15 @@
     padding-top: 0.5em;
     text-align: center;
 }
+
+
+@media (max-width: 700px) {
+    .upvotes {
+        display: none;
+    }
+
+    .post-item {
+        grid-template-columns: 1fr;
+    }
+  
+  }
