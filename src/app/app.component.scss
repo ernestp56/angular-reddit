@@ -13,11 +13,12 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 50px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
-    color: white;
+    background-color: #FFFFFF;
+    box-shadow: 0 5px 1px rgb(0,0,0,0.01);
+    color: #222222;
     font-weight: 600;
   }
   
@@ -25,17 +26,14 @@
     margin: 0 16px;
   }
   
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
-  
-  .toolbar #twitter-logo:hover {
-    opacity: 0.8;
+  .container.wrapper {
+    background-color: #DAE0E6;
+    min-height: 100vh;
   }
 
   .container.main {
     max-width: 1200px;
-    margin: 60px auto 32px;
+    margin: 50px auto 32px;
+    padding: 1em 0;
 }
   
