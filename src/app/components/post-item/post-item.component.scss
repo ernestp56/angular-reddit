@@ -1,0 +1,8 @@
+.post-item {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    background-color: #FFFFFF;
+    border: 0.1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 1em;
+}
