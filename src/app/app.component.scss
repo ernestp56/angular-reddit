@@ -9,7 +9,7 @@
   }
   
   .toolbar {
-    position: absolute;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -33,7 +33,7 @@
 
   .container.main {
     max-width: 1200px;
-    margin: 50px auto 32px;
+    margin: 0 auto 32px;
     padding: 1em 0;
 }
   
