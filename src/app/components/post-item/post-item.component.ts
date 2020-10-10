@@ -11,8 +11,8 @@ export class PostItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.post)
     this.post = this.post.data
+    console.log(this.post.thumbnail)
   }
 
 }
