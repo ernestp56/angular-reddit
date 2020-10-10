@@ -33,14 +33,14 @@
 
 .container.main {
   max-width: 1200px;
-  margin: 0 auto 32px;
+  margin: 0 auto;
   padding: 1em 0;
 }
 
 @media (max-width: 700px) {
   .container.main {
     width: 100vw;
-    margin: 0 auto 32px;
+    margin: 0 auto;
     justify-items: center;
 
   }
