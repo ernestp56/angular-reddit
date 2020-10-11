@@ -37,7 +37,7 @@ export class PostsComponent implements OnInit {
   }
 
   fetchBefore(): void {
-    this.postService.getData(null, this.before, null, this.count).subscribe(response => {
+    this.postService.getData(this.limit, this.before, null, this.count).subscribe(response => {
       this.setBeforeAfter(response.data.before, response.data.after);
       this.setCount(response.data.children.length);
       if (response.data.children.length > 0) {
@@ -47,7 +47,7 @@ export class PostsComponent implements OnInit {
   }
 
   fetchAfter(): void {
-    this.postService.getData(null, null, this.after, this.count).subscribe(response => {
+    this.postService.getData(this.limit, null, this.after, this.count).subscribe(response => {
       this.setBeforeAfter(response.data.before, response.data.after);
       this.setCount(response.data.children.length);
       this.posts = response.data.children;
