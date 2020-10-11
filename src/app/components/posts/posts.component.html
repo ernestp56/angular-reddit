@@ -2,7 +2,7 @@
     <button (click)="onChangeLimit()">Test</button>
     <app-post-item *ngFor="let post of posts" [post]='post'></app-post-item>
     <div>
-        <button class="prev">Previous</button>
-        <button class="next">Next</button>
+        <button *ngIf="before != 'first'" (click)="fetchBefore()" class="prev">Previous</button>
+        <button (click)="fetchAfter()" class="next">Next</button>
     </div>
 </div>

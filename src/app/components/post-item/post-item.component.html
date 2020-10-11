@@ -3,7 +3,7 @@
     <div class="post-content">
         <div class="subreddit">r/{{ post.subreddit }}</div>
         <div>{{ post.title }}</div>
-        <img ng-if="post.thumbnail.includes(jpg)" src="{{ post.thumbnail }}" />
+        <img *ngIf="post.thumbnail.includes('jpg')" src="{{ post.thumbnail }}" />
 
     </div>
 
