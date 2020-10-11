@@ -1,7 +1,10 @@
 <div class="post-item">
-    <div class="upvotes">{{ post.ups }}</div>
+    <div class="upvotes">{{ post.score }}</div>
     <div class="post-content">
-        <div class="subreddit">r/{{ post.subreddit }} {{ post.created * 1000 | date }}</div>
+        <div class="post-header">
+            <div>Posted by {{ post.author }} on {{ post.created * 1000 | date }}</div>
+            <div class="subreddit">r/{{ post.subreddit }}</div>
+        </div>
         <div>{{ post.title }}</div>
         <img *ngIf="post.thumbnail.includes('jpg')" src="{{ post.thumbnail }}" />
 
