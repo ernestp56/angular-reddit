@@ -39,7 +39,16 @@ img {
 
 .post-content > div{
     padding: 0.5em 0.5em;
+}
+
+.post-title {
     font-weight: bold;
+}
+
+.post-comments {
+    grid-column: 1/3;
+    font-size: 0.8em;
+    font-weight: lighter;
 }
 
 .post-item:first-child {
