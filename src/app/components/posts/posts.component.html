@@ -1,5 +1,13 @@
 <div class="posts-wrapper">
-    <button (click)="onChangeLimit()">Test</button>
+    <!-- <button (click)="onChangeLimit()">Test</button> -->
+    <mat-form-field appearance="fill">
+        <mat-label>Posts displayed</mat-label>
+        <mat-select [(value)]="limit">
+          <mat-option (click)="onChangeLimit()" value="5">5</mat-option>
+          <mat-option (click)="onChangeLimit()" value="10">10</mat-option>
+          <mat-option (click)="onChangeLimit()" value="25">25</mat-option>
+        </mat-select>
+    </mat-form-field>
     <app-post-item *ngFor="let post of posts" [post]='post'></app-post-item>
     <div>
         <button *ngIf="before != 'first'" (click)="fetchBefore()" class="prev">Previous</button>

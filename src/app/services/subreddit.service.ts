@@ -14,7 +14,7 @@ export class SubredditService {
   getData(limit?: string, before?: string | null, after?: string | null, count?: string):Observable<any> {
     // console.log(this.subredditUrl + (limit ? "?limit=" + limit : "?limit=" + this.subredditLimit)
     // + (before ? '&before=' + before : '') + (after ? '&after=' + after : '') + ('&count=' + this.subredditLimit))
-    return this.http.get<any>(this.subredditUrl + (limit ? "?limit=" + limit : "?limit=" + this.subredditLimit)
+    return this.http.get<any>(this.subredditUrl + ("?limit=" + limit)
       + (before ? '&before=' + before : '') + (after ? '&after=' + after : '') + ("&count=" + "555"));
   }
 }

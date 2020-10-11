@@ -2,6 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { SubredditService } from '../../services/subreddit.service';
 // import { postItem } from '../post-item/post-item.component';
 
+interface Limit {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -11,13 +16,13 @@ export class PostsComponent implements OnInit {
   posts:any = [];
   before?:string | null = '';
   after?:string | null = '';
-  limit:string = '';
+  limit:string = '10';
   count:string = '';
   
   constructor(private postService:SubredditService) { }
 
   ngOnInit(): void {
-    this.postService.getData().subscribe(response => {
+    this.postService.getData(this.limit).subscribe(response => {
       this.setBeforeAfter(response.data.before, response.data.after);
       this.setCount(response.data.children.length);
       this.posts = response.data.children;
