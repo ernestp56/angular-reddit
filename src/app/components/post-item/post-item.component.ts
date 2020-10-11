@@ -12,7 +12,10 @@ export class PostItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.post = this.post.data
-    // console.log(this.post.thumbnail)
+  }
+
+  fetchThread(): void {
+    console.log(this.post.permalink)
   }
 
 }
