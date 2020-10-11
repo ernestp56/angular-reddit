@@ -1,5 +1,5 @@
 <div class="post-item">
-    <div class="upvotes">U</div>
+    <div class="upvotes">{{ post.ups }}</div>
     <div class="post-content">
         <div class="subreddit">r/{{ post.subreddit }} {{ post.created * 1000 | date }}</div>
         <div>{{ post.title }}</div>
