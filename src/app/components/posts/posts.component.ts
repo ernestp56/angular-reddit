@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SubredditService } from '../../services/subreddit.service';
-// import { postItem } from '../post-item/post-item.component';
 
 interface Limit {
   value: string;
