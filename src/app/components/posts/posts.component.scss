@@ -5,3 +5,8 @@
     grid-gap: 1em;
     margin-top: 2em;
 }
+
+.page-buttons {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+}
