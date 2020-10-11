@@ -11,7 +11,7 @@ export class SubredditService {
 
   constructor(private http:HttpClient) { }
 
-  getData(limit?):Observable<any> {
+  getData(limit?, before?, after?):Observable<any> {
     return this.http.get<any>(this.subredditUrl + (limit ? "?limit=" + limit : this.subredditLimit));
   }
 }

@@ -25,5 +25,15 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  fetchBefore(): void {
+
+  
+  }
+
+  fetchAfter(): void {
+
+
+  }
+
 
 }
