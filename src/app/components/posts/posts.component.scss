@@ -10,3 +10,19 @@
     display: grid;
     grid-template-columns: 1fr 8fr 1fr;
 }
+
+.material-icons {
+    font-size: 2em;
+}
+
+.material-icons:hover {
+    font-weight: 700; 
+}
+
+.material-icons:active {
+    transform: perspective(200px) translate3d(0, 0, 20px);
+}
+
+.material-icons.forward {
+    justify-self: end;
+}

@@ -10,8 +10,10 @@
     </mat-form-field>
     <app-post-item *ngFor="let post of posts" [post]='post'></app-post-item>
     <div class="page-buttons">
-        <button *ngIf="before != 'first'" (click)="fetchBefore()" class="prev">Previous</button>
+        <span (click)="fetchBefore()" class="material-icons">arrow_back</span>
+        <!-- <button *ngIf="before != 'first'"  class="prev">Previous</button> -->
         <div></div>
-        <button (click)="fetchAfter()" class="next">Next</button>
+        <span (click)="fetchAfter()" class="material-icons forward">arrow_forward</span>
+        <!-- <button (click)="fetchAfter()" class="next">Next</button> -->
     </div>
 </div>
