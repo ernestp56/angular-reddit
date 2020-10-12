@@ -15,8 +15,8 @@ export class PostItemComponent implements OnInit {
     this.post = this.post.data;
   }
 
-  getPermalink(permalink: string) {
-    this.permalink.emit(permalink);
+  getPermalink() {
+    this.permalink.emit(this.post.permalink);
   }
 
 }

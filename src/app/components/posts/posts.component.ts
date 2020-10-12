@@ -13,6 +13,7 @@ export class PostsComponent implements OnInit {
   limit:string = '10';
   count:string = '';
   permalink: string = '';
+  showThread: boolean = false;
   
   constructor(private postService:SubredditService) { }
 
@@ -59,6 +60,9 @@ export class PostsComponent implements OnInit {
   }
 
   fetchThread(permalink: string) {
+    if (permalink.length > 0) {
+      this.showThread = true;
+    }
 
   }
 
