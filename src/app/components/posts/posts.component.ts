@@ -1,10 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SubredditService } from '../../services/subreddit.service';
-
-interface Limit {
-  value: string;
-  viewValue: string;
-}
 
 @Component({
   selector: 'app-posts',
