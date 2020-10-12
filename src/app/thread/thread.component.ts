@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-thread',
@@ -6,6 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./thread.component.scss']
 })
 export class ThreadComponent implements OnInit {
+  @Input() permalink: string = '';
   @Output() showThread = new EventEmitter<boolean>();
 
   constructor() { }

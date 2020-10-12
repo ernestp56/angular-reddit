@@ -1,4 +1,4 @@
-<app-thread *ngIf="showThread" (showThread)="closeThread($event)"></app-thread>
+<app-thread *ngIf="showThread" (showThread)="closeThread($event)" [permalink]='permalink'></app-thread>
 <div class="posts-wrapper">
     <!-- <button (click)="onChangeLimit()">Test</button> -->
     <mat-form-field appearance="fill">

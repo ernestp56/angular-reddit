@@ -12,7 +12,7 @@ export class PostsComponent implements OnInit {
   after?:string | null = '';
   limit:string = '10';
   count:string = '';
-  permalink: string = '';
+  permalink: string | null = null;
   showThread: boolean = false;
   @Output() disabled = new EventEmitter<boolean>();
   
@@ -62,6 +62,7 @@ export class PostsComponent implements OnInit {
 
   fetchThread(permalink: string) {
     if (permalink.length > 0) {
+      this.permalink = permalink;
       this.showThread = true;
     }
   }
