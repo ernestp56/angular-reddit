@@ -19,7 +19,7 @@ export class ThreadComponent implements OnInit {
     this.postService.getData(this.permalink).subscribe(response => {
       this.thread = response;
       this.post = this.thread[0].data;
-      this.comments = this.thread[1].data;
+      this.comments = this.thread[1].data.children;
       console.log(this.comments)
     });
   }
