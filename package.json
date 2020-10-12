@@ -1,7 +1,6 @@
 {
   "name": "angular-reddit",
   "version": "0.0.1",
-  "homepage": "http://ernestp56.github.io/angular-reddit",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
