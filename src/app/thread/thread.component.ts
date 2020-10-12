@@ -10,13 +10,17 @@ export class ThreadComponent implements OnInit {
   @Input() permalink: string | null = null;
   @Output() showThread = new EventEmitter<boolean>();
   thread: any = [];
+  comments: any = [];
+  post: any = [];
 
   constructor(private postService:ThreadService) { }
 
   ngOnInit(): void {
     this.postService.getData(this.permalink).subscribe(response => {
       this.thread = response;
-      console.log(this.thread)
+      this.post = this.thread[0].data;
+      this.comments = this.thread[1].data;
+      console.log(this.comments)
     });
   }
 

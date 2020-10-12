@@ -12,13 +12,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ThreadComponent } from './thread/thread.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
     PostItemComponent,
-    ThreadComponent
+    ThreadComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
