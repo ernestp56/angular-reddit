@@ -95,3 +95,9 @@
 .subreddit {
     font-weight: bold;
 }
+
+@media (max-width: 600px) {
+    .thread-wrapper {
+        margin: 2em 0;
+    }
+}
