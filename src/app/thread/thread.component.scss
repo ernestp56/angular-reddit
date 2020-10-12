@@ -18,3 +18,22 @@
     height: 100%;
     background-color: #FFFFFF;
 }
+
+.thread-navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #222;
+    color:#D7DADC;
+}
+
+.thread-navbar > div {
+    padding: 1em;
+}
+
+.thread-container {
+    padding: 1em;
+}
+
