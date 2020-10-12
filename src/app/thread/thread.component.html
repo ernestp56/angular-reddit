@@ -6,9 +6,7 @@
                 <button (click)="closeThread()">Close</button>
             </div>
         </div>
-        <div class="thread-container">
-            {{ permalink }}
-        </div>
+        <div *ngIf="post[0]" class="thread-container" [innerHTML]="post[0].data.selftext | marked"></div>
         <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
     </div>
 </div>

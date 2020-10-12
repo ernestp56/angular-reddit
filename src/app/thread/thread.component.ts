@@ -12,15 +12,16 @@ export class ThreadComponent implements OnInit {
   thread: any = [];
   comments: any = [];
   post: any = [];
+  responses:any = [];
 
   constructor(private postService:ThreadService) { }
 
   ngOnInit(): void {
     this.postService.getData(this.permalink).subscribe(response => {
       this.thread = response;
-      this.post = this.thread[0].data;
-      this.comments = this.thread[1].data.children;
-      console.log(this.comments)
+      this.post = response[0].data.children;
+      this.comments = response[1].data.children;
+      console.log(this.post);
     });
   }
 

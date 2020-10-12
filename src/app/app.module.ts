@@ -13,6 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ThreadComponent } from './thread/thread.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { MarkedPipe } from './pipes/marked.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CommentComponent } from './components/comment/comment.component';
     PostsComponent,
     PostItemComponent,
     ThreadComponent,
-    CommentComponent
+    CommentComponent,
+    MarkedPipe
   ],
   imports: [
     BrowserModule,
