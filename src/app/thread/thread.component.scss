@@ -34,12 +34,19 @@
 
 .thread-navbar {
     position: sticky;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     top: 0;
     left: 0;
     right: 0;
-    height: 50px;
+    min-height: 50px;
     background-color: #222;
     color:#D7DADC;
+}
+
+.thread-close {
+    display: grid;
+    justify-items: end;
 }
 
 .thread-navbar > div {
