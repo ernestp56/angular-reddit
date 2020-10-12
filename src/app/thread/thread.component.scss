@@ -47,7 +47,7 @@
 }
 
 .thread-container {
-    padding: 1em 1em 1em 0;
+    padding-right: 1em;
 }
 
 .thread-container {
@@ -69,4 +69,22 @@
 
 .comment-container {
     max-width: 100vw;
+}
+
+.post-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 1em 0;
+}
+
+.post-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 5px 0;
+    font-size: 0.8em;
+    font-weight: lighter;
+}
+
+.subreddit {
+    font-weight: bold;
 }

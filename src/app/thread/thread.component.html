@@ -8,7 +8,15 @@
         </div>
         <div class="thread-wrapper">
             <div class="upvotes">U</div>
-            <div *ngIf="post[0]" class="thread-container" [innerHTML]="post[0].data.selftext | marked"></div>
+            <div>
+                <div class="post-header">
+                    <div><span class="subreddit">r/{{ post.subreddit }}</span>  Posted by {{ post.author }} on {{ post.created * 1000 | date }}</div>
+                </div>
+                <div>
+                    <div class="post-title">{{ post.title }}</div>
+                    <div *ngIf="post" class="thread-container" [innerHTML]="post.selftext | marked"></div>
+                </div>
+            </div>
             <hr class="bottom-line">
             <div></div>
             <div class="comment-container">
