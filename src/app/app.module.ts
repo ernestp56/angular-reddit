@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SubredditComponent } from './components/subreddit/subreddit.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { PostItemComponent } from './components/post-item/post-item.component';
 
@@ -17,7 +16,6 @@ import { ThreadComponent } from './thread/thread.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SubredditComponent,
     PostsComponent,
     PostItemComponent,
     ThreadComponent
