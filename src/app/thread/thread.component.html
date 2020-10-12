@@ -1,12 +1,20 @@
 <div class="thread-overlay">
-    <div class="thread-wrapper">
+    <div class="thread-main">
         <div class="thread-navbar">
             <div>
                 Some info
                 <button (click)="closeThread()">Close</button>
             </div>
         </div>
-        <div *ngIf="post[0]" class="thread-container" [innerHTML]="post[0].data.selftext | marked"></div>
-        <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
+        <div class="thread-wrapper">
+            <div class="upvotes">U</div>
+            <div *ngIf="post[0]" class="thread-container" [innerHTML]="post[0].data.selftext | marked"></div>
+            <hr class="bottom-line">
+            <div></div>
+            <div class="comment-container">
+                <app-comment *ngFor="let comment of comments" [comment]="comment" ></app-comment>
+
+            </div>
+        </div>
     </div>
 </div>

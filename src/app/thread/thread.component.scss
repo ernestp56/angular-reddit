@@ -1,7 +1,8 @@
 .thread-overlay {
   position: fixed; /* Sit on top of the page content */
   display: block; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
+  max-width:100vw;
+//   width: 100%; /* Full width (cover the whole page) */
   height: 100%;
   overflow: auto;
   top: 50px;
@@ -13,10 +14,21 @@
   cursor: pointer; /* Add a pointer on hover */
 }
 
-.thread-wrapper {
+.thread-main {
+    display: grid;
+    grid-template-columns: 1fr;
     max-width: 1200px;
     margin: 0 auto;
     min-height: 100vh;
+    background-color: #D7DADC;
+}
+
+.thread-wrapper {
+    display: grid;
+    grid-template-columns: 3em auto;
+    border-radius: 5px;
+    // max-width: 640px;s
+    margin: 2em;
     background-color: #FFFFFF;
 }
 
@@ -35,6 +47,26 @@
 }
 
 .thread-container {
-    padding: 1em;
+    padding: 1em 1em 1em 0;
 }
 
+.thread-container {
+    word-break: break-all;
+}
+
+.upvotes {
+    padding: 1em 1em 0 1em;
+    text-align: center;
+}
+
+.bottom-line {
+    margin-bottom: 0;
+    width: 90%;
+    opacity: 0.4;
+    text-align: center;
+    grid-column: 1/3;
+}
+
+.comment-container {
+    max-width: 100vw;
+}
