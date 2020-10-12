@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-post-item',
@@ -7,15 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PostItemComponent implements OnInit {
   @Input() post: any;
+  @Output() permalink = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
-    this.post = this.post.data
+    this.post = this.post.data;
   }
 
-  fetchThread(): void {
-    console.log(this.post.permalink)
+  getPermalink(permalink: string) {
+    this.permalink.emit(permalink);
   }
 
 }

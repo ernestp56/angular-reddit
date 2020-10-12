@@ -12,6 +12,7 @@ export class PostsComponent implements OnInit {
   after?:string | null = '';
   limit:string = '10';
   count:string = '';
+  permalink: string = '';
   
   constructor(private postService:SubredditService) { }
 
@@ -55,6 +56,10 @@ export class PostsComponent implements OnInit {
 
   setCount(count: number) {
     this.count = count.toString();
+  }
+
+  fetchThread(permalink: string) {
+
   }
 
 }

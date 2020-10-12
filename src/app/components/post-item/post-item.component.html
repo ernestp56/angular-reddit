@@ -1,6 +1,6 @@
 <div class="post-item">
     <div class="upvotes">{{ post.score }}</div>
-    <div class="post-content" (click)="fetchThread()">
+    <div class="post-content" (click)="getPermalink()">
         <div class="post-header">
             <div>Posted by {{ post.author }} on {{ post.created * 1000 | date }}</div>
             <div class="subreddit">r/{{ post.subreddit }}</div>

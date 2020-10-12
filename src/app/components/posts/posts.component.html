@@ -8,7 +8,7 @@
           <mat-option (click)="onChangeLimit()" value="25">25</mat-option>
         </mat-select>
     </mat-form-field>
-    <app-post-item *ngFor="let post of posts" [post]='post'></app-post-item>
+    <app-post-item *ngFor="let post of posts" [post]='post' (permalink)="fetchThread($event)"></app-post-item>
     <div class="page-buttons">
         <span (click)="fetchBefore()" class="material-icons">arrow_back</span>
         <!-- <button *ngIf="before != 'first'"  class="prev">Previous</button> -->
