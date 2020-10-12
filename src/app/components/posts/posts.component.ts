@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SubredditService } from '../../services/subreddit.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class PostsComponent implements OnInit {
   count:string = '';
   permalink: string = '';
   showThread: boolean = false;
+  @Output() disabled = new EventEmitter<boolean>();
   
   constructor(private postService:SubredditService) { }
 
@@ -63,7 +64,11 @@ export class PostsComponent implements OnInit {
     if (permalink.length > 0) {
       this.showThread = true;
     }
+  }
 
+  closeThread(show: boolean) {
+    this.showThread = show;
+    console.log(this.showThread)
   }
 
 }

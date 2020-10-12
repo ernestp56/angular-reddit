@@ -2,7 +2,8 @@
   position: fixed; /* Sit on top of the page content */
   display: block; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  min-height: 100vh;
+  overflow: auto;
   top: 50px;
   left: 0;
   right: 0;
