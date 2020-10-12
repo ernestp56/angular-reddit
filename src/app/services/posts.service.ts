@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostsService {
-  postsUrl:string = 'https://www.reddit.com/r/technology.json';
+  postsUrl:string = 'https://www.reddit.com/r/photography.json';
   subredditLimit = '10'
 
   constructor(private http:HttpClient) { }

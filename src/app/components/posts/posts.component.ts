@@ -23,6 +23,7 @@ export class PostsComponent implements OnInit {
       this.setBeforeAfter(response.data.before, response.data.after);
       this.setCount(response.data.children.length);
       this.posts = response.data.children;
+      console.log(this.posts)
     });
   }
 
