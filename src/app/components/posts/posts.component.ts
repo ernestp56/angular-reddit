@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { SubredditService } from '../../services/subreddit.service';
+import { PostsService } from '../../services/posts.service';
 
 @Component({
   selector: 'app-posts',
@@ -16,7 +16,7 @@ export class PostsComponent implements OnInit {
   showThread: boolean = false;
   @Output() disabled = new EventEmitter<boolean>();
   
-  constructor(private postService:SubredditService) { }
+  constructor(private postService:PostsService) { }
 
   ngOnInit(): void {
     this.postService.getData(this.limit).subscribe(response => {
