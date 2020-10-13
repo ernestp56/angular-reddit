@@ -101,6 +101,10 @@
 }
 
 @media (max-width: 600px) {
+    .thread-overlay {
+        min-width: 100vw;
+    }
+
     .thread-wrapper {
         margin: 2em 0;
     }
