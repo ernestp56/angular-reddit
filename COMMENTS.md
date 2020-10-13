@@ -10,6 +10,5 @@ Nice to have:
         - add effect on loading of posts so that the user knows there is something happening
 
 Bugs:
-    - white space on the bottom of the screen
     - pinned posts are sent together with first request of a certain subreddit. This caused me quite a bit of confusion and delay as I had no idea about it.
     - when changing the number of posts shown, which post should it display after?
