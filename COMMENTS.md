@@ -6,6 +6,8 @@ Nice to have:
     Text displayed:
         - since the images src are part of text, they don't get properly rendered
         - links look weird, some characters too
+    Loading:
+        - add effect on loading of posts so that the user knows there is something happening
 
 Bugs:
     - white space on the bottom of the screen
