@@ -21,7 +21,7 @@ export class ThreadComponent implements OnInit {
       this.thread = response;
       this.post = response[0].data.children[0].data;
       this.comments = response[1].data.children;
-      console.log(this.post);
+      // console.log(this.post);
     });
   }
 

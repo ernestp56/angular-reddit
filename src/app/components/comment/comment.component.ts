@@ -13,8 +13,8 @@ export class CommentComponent implements OnInit {
 
   ngOnInit(): void {
     this.comment = this.comment.data;
-    // this.replies = this.comment.replies.data ? this.comment.replies.data.children : null;
-    // console.log("test " + this.replies)
+    this.replies = this.comment.replies.data ? this.comment.replies.data.children : null;
+    console.log(this.replies)
   }
 
 }
