@@ -29,7 +29,7 @@ export class PostsComponent implements OnInit {
       this.setCount(response.data.children.length);
       this.posts = response.data.children;
     },
-    err => console.log(alert("No subreddits with having name")),
+    err => console.log(alert("No subreddits found using this name")),
     ); 
   }
 
