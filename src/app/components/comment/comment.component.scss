@@ -1,16 +1,16 @@
 .comment-container {
     display: grid;
     grid-template-columns: 2em auto;    
-    padding: 1em 0;
+    padding-bottom: 1em;
 }
 
 .comment-text {
-    padding: 0.5em 0;
+    padding: 0em 0.5em 0.5em 0;
     word-break: break-all;
 }
 
 .upvotes {
-    padding: 0 0.5em;
+    padding: 0 0.5em 0.5em 0.5em;
     font-size : small;
     text-align: center;
     word-wrap: break-word;
@@ -26,6 +26,6 @@
     display: grid;
     grid-template-columns: 1fr;
     padding: 5px 0;
-    font-size: 0.8em;
+    font-size: small;
     font-weight: lighter;
 }
