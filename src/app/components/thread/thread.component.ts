@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ThreadService } from '../services/thread.service';
+import { ThreadService } from '../../services/thread.service';
 
 @Component({
   selector: 'app-thread',
@@ -21,7 +21,6 @@ export class ThreadComponent implements OnInit {
       this.thread = response;
       this.post = response[0].data.children[0].data;
       this.comments = response[1].data.children;
-      // console.log(this.post);
     });
   }
 

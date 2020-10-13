@@ -12,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
-import { ThreadComponent } from './thread/thread.component';
+import { ThreadComponent } from './components/thread/thread.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { MarkedPipe } from './pipes/marked.pipe';
 
