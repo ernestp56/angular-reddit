@@ -1,14 +1,20 @@
 <app-thread *ngIf="showThread" (showThread)="closeThread($event)" [permalink]='permalink'></app-thread>
 <div class="posts-wrapper">
     <!-- <button (click)="onChangeLimit()">Test</button> -->
-    <mat-form-field appearance="fill">
-        <mat-label>Posts displayed</mat-label>
-        <mat-select [(value)]="limit">
-          <mat-option (click)="onChangeLimit()" value="5">5</mat-option>
-          <mat-option (click)="onChangeLimit()" value="10">10</mat-option>
-          <mat-option (click)="onChangeLimit()" value="25">25</mat-option>
-        </mat-select>
-    </mat-form-field>
+    <div class="posts-forms">
+        <mat-form-field appearance="fill">
+            <mat-label>Posts displayed</mat-label>
+            <mat-select [(value)]="limit">
+              <mat-option (click)="onChangeLimit()" value="5">5</mat-option>
+              <mat-option (click)="onChangeLimit()" value="10">10</mat-option>
+              <mat-option (click)="onChangeLimit()" value="25">25</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Search subreddit to view</mat-label>
+            <input matInput placeholder="Ex. Technology" #subreddit placeholder="Photography" (keydown.enter)="passSubreddit(subreddit.value)">
+        </mat-form-field>
+    </div>
     <app-post-item *ngFor="let post of posts" [post]='post' (permalink)="fetchThread($event)"></app-post-item>
     <div class="page-buttons">
         <span (click)="fetchBefore()" class="material-icons">arrow_back</span>

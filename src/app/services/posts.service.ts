@@ -6,13 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostsService {
-  postsUrl:string = 'https://www.reddit.com/r/photography.json';
-  subredditLimit = '10'
+  postsUrl:string = 'https://www.reddit.com/r/';
 
   constructor(private http:HttpClient) { }
 
-  getData(limit?: string, before?: string | null, after?: string | null, count?: string):Observable<any> {
-    return this.http.get<any>(this.postsUrl + ("?limit=" + limit)
+  getData(subreddit: string, limit?: string, before?: string | null, after?: string | null, count?: string):Observable<any> {
+    return this.http.get<any>(this.postsUrl + subreddit + ".json" + ("?limit=" + limit)
       + (before ? '&before=' + before : '') + (after ? '&after=' + after : '') + ("&count=" + "555"));
   }
 }
