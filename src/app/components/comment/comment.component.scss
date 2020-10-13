@@ -1,4 +1,31 @@
+.comment-container {
+    display: grid;
+    grid-template-columns: 2em auto;    
+    padding: 1em 0;
+}
+
 .comment-text {
-    padding: 2em;
+    padding: 0.5em 0;
     word-break: break-all;
+}
+
+.upvotes {
+    padding: 0 0.5em;
+    font-size : small;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.vl {
+    margin-left: 1em;
+    border-left: 0.2em solid rgba(128, 128, 128, 0.397);
+    height: calc(100% - 1em);
+}
+
+.comment-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 5px 0;
+    font-size: 0.8em;
+    font-weight: lighter;
 }

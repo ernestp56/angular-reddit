@@ -1,1 +1,10 @@
-<div class="comment-text">{{ comment.body }}</div>
+<div class="comment-container">
+    <div>
+        <div class="upvotes">{{ comment.score }}</div>
+        <div class="vl"></div>
+    </div>
+    <div>
+        <div class="comment-header">Posted by {{ comment.author }} on {{ comment.created * 1000 | date }}</div>
+        <div class="comment-text">{{ comment.body }}</div>
+    </div>
+</div>
