@@ -24,43 +24,28 @@ export class PostsComponent implements OnInit {
   }
 
   fetchPosts(): void {
-    this.postService.getData(this.subreddit, this.limit).subscribe(response => {
-      this.setBeforeAfter(response.data.before, response.data.after);
-      this.setCount(response.data.children.length);
-      this.posts = response.data.children;
-    },
-    err => console.log(alert("No subreddits found using this name")),
-    ); 
+    this.callService(null, null);
   }
 
   onChangeLimit(): void {
-    this.postService.getData(this.subreddit, this.limit, null, this.after, this.count).subscribe(response => {
-      this.setBeforeAfter(response.data.before, response.data.after);
-      this.posts = response.data.children;
-    },
-    err => console.log(alert(err.statusText)),
-    ); 
+    this.callService(null, this.after);
   }
 
   fetchBefore(): void {
-    this.postService.getData(this.subreddit, this.limit, this.before, null, this.count).subscribe(response => {
-      this.setBeforeAfter(response.data.before, response.data.after);
-      this.setCount(response.data.children.length);
-      if (response.data.children.length > 0) {
-        this.posts = response.data.children;
-      }
-    },
-    err => console.log(alert(err.statusText)),
-    );  
+    this.callService(this.before, null);
   }
 
   fetchAfter(): void {
-    this.postService.getData(this.subreddit, this.limit, null, this.after, this.count).subscribe(response => {
+    this.callService(null, this.after);
+  }
+
+  callService(before: string | null, after: string | null):void {
+    this.postService.getData(this.subreddit, this.limit, before, after, this.count).subscribe(response => {
       this.setBeforeAfter(response.data.before, response.data.after);
       this.setCount(response.data.children.length);
       this.posts = response.data.children;
     },
-    err => console.log(alert(err.statusText)),
+    err => console.log(alert(err.message)),
     );  
   }
 
