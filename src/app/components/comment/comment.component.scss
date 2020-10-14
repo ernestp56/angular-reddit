@@ -1,7 +1,7 @@
 .comment-container {
     display: grid;
     grid-template-columns: 2em auto;    
-    padding-bottom: 1em;
+    padding-top: 0.5em;
 }
 
 .comment-text {
@@ -19,7 +19,7 @@
 .vl {
     margin-left: 1em;
     border-left: 0.2em solid rgba(128, 128, 128, 0.397);
-    height: calc(100% - 1em);
+    height: calc(100% - 1.5em);
 }
 
 .comment-header {
