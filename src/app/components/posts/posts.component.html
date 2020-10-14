@@ -1,4 +1,10 @@
 <app-thread *ngIf="showThread" (showThread)="closeThread($event)" [permalink]='permalink'></app-thread>
+<div class="subreddit-navbar">
+    <div class="subreddit-container">
+        <div *ngIf="posts[0]" class="subreddit-title">{{ posts[0].data.subreddit | titlecase }}</div>
+        <div *ngIf="posts[0]" class="subreddit-subtext">r/{{ posts[0].data.subreddit }} </div>
+    </div>
+</div>
 <div class="posts-wrapper">
     <!-- <button (click)="onChangeLimit()">Test</button> -->
     <div class="posts-forms">
@@ -10,6 +16,7 @@
               <mat-option (click)="onChangeLimit()" value="25">25</mat-option>
             </mat-select>
         </mat-form-field>
+        <div></div>
         <mat-form-field appearance="fill">
             <mat-label>Search subreddit to view</mat-label>
             <input matInput placeholder="Ex. Technology" #subreddit placeholder="Photography" (keydown.enter)="passSubreddit(subreddit.value)">

@@ -32,12 +32,6 @@
   min-height: 100vh;
 }
 
-.container.main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1em 0;
-}
-
 @media (max-width: 700px) {
   .container.main {
     width: 100vw;
