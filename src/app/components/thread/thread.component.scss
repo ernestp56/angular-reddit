@@ -56,9 +56,6 @@
 
 .thread-container {
     padding-right: 1em;
-}
-
-.thread-container {
     word-break: break-all;
 }
 
@@ -111,5 +108,17 @@
 
     .thread-navbar {
         grid-template-columns: 3fr 1fr;
+    }
+
+    .upvotes {
+        display: none;
+    }
+
+    .thread-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .post-wrapper {
+        padding-left: 1em;
     }
 }
