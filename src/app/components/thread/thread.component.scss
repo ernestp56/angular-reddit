@@ -108,4 +108,8 @@
     .thread-wrapper {
         margin: 2em 0;
     }
+
+    .thread-navbar {
+        grid-template-columns: 3fr 1fr;
+    }
 }
