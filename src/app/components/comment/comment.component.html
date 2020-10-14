@@ -5,7 +5,7 @@
     </div>
     <div>
         <div class="comment-header">Posted by {{ comment.author }} on {{ comment.created * 1000 | date }}</div>
-        <div class="comment-text">{{ comment.body }}</div>
+        <div class="comment-text" [innerHTML]="comment.body | marked"></div>
         <app-comment *ngFor="let comment of replies" [comment]="comment"></app-comment>
     </div>
 </div>
