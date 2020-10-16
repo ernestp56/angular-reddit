@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostsService {
-  postsUrl:string = 'https://www.reddit.com/r/';
+  postsUrl = 'https://www.reddit.com/r/';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getData(subreddit: string, limit?: string, before?: string | null, after?: string | null, count?: string):Observable<any> {
-    return this.http.get<any>(this.postsUrl + subreddit + ".json" + ("?limit=" + limit)
-      + (before ? '&before=' + before : '') + (after ? '&after=' + after : '') + ("&count=" + "555"));
+  getData(subreddit: string, limit?: string, before?: string | null, after?: string | null, count?: string): Observable<any> {
+    return this.http.get<any>(this.postsUrl + subreddit + '.json' + ('?limit=' + limit)
+      + (before ? '&before=' + before : '') + (after ? '&after=' + after : '') + ('&count=' + '555'));
   }
 }

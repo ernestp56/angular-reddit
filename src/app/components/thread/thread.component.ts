@@ -12,9 +12,9 @@ export class ThreadComponent implements OnInit {
   thread: any = [];
   comments: any = [];
   post: any = [];
-  responses:any = [];
+  responses: any = [];
 
-  constructor(private threadService:ThreadService) { }
+  constructor(private threadService: ThreadService) { }
 
   ngOnInit(): void {
     this.threadService.getData(this.permalink).subscribe(response => {
@@ -24,7 +24,7 @@ export class ThreadComponent implements OnInit {
     });
   }
 
-  closeThread() {
+  closeThread(): void {
     this.showThread.emit(false);
   }
 

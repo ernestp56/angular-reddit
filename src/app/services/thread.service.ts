@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ThreadService {
-  baseUrl = 'https://www.reddit.com'
+  baseUrl = 'https://www.reddit.com';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getData(permalink: string):Observable<any> {
-    return this.http.get<any>(this.baseUrl + permalink + ".json");
+  getData(permalink: string): Observable<any> {
+    return this.http.get<any>(this.baseUrl + permalink + '.json');
   }
 }
