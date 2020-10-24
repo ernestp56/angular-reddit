@@ -9,7 +9,7 @@
             <div class="post-title">{{ title }}</div>
             <div class="post-selftext" *ngIf="selftext">{{ selftext.substr(0, 200) }}</div>
         </div>
-        <img *ngIf="thumbnail.includes('jpg')" src="{{ thumbnail }}" />
+        <img *ngIf="thumbnail" src="{{ thumbnail }}" />
         <div class="post-comments">{{ numComments }} Comments</div>
     </div>
 

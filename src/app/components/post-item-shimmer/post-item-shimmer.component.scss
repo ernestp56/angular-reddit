@@ -1,0 +1,34 @@
+.post-item-shimmer {
+    &__score {
+        width: 30%;
+        height: 12px;
+    }
+    &__author {
+    width: 30%;
+    height: 12px;
+    }
+    &__subreddit {
+        width: 30%;
+        height: 12px;
+    }
+    &__title {
+        margin: 0 35px;
+        margin-top: 30px;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    &__selftext {
+      width: 60%;
+      height: 18px;
+      margin-top: 15px;
+    }
+    &__img {
+      width: 100%;
+      height: 80px;
+    }
+    &__comments {
+      margin-top: 30px;
+      width: 90%;
+      height: 20px;
+    }
+  }

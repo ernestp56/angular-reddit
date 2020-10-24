@@ -48,8 +48,9 @@ export class PostsComponent implements OnInit {
 
   callService(before: string | null, after: string | null): void {
     this.postService.getData(this.subreddit, this.limit, before, after, this.count).subscribe(response => {
-      if (response.length) {
-        this.posts.push(...response);
+      if (response.data.children.length) {
+        this.posts.push(...response.data.children);
+        console.log(...response.data.children);
         // this.cards.push(...res);
       } else {
         this.setBeforeAfter(response.data.before, response.data.after);
