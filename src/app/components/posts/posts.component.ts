@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PostsService } from '../../services/posts.service';
+import PostItemInterface from '../interfaces/post-item.interface';
 
 @Component({
   selector: 'app-posts',
@@ -7,6 +8,12 @@ import { PostsService } from '../../services/posts.service';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
+
+  cards: PostItemInterface[] = [];
+  isLoading = false;
+  loadedAll = false;
+  isFirstLoad = true;
+
   posts: any = [];
   before?: string | null = '';
   after?: string | null = '';
