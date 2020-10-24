@@ -48,13 +48,29 @@ export class PostsComponent implements OnInit {
 
   callService(before: string | null, after: string | null): void {
     this.postService.getData(this.subreddit, this.limit, before, after, this.count).subscribe(response => {
-      this.setBeforeAfter(response.data.before, response.data.after);
-      this.setCount(response.data.children.length);
-      this.posts = response.data.children;
+      if (response.length) {
+        this.posts.push(...response);
+        // this.cards.push(...res);
+      } else {
+        this.setBeforeAfter(response.data.before, response.data.after);
+        this.setCount(response.data.children.length);
+        this.loadedAll = true;
+      }
+      this.isLoading = false;
+      this.isFirstLoad = false;
     },
     err => console.log(alert(err.message)),
     );
   }
+
+  detectBottom(): void {
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      if (!this.loadedAll) {
+        this.fetchAfter();
+      }
+    }
+}
 
   setBeforeAfter(before: string | null, after: string | null): void {
     this.before = before ? before : 'first';

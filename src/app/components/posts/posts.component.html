@@ -22,12 +22,33 @@
             <input matInput placeholder="Ex. Technology" #subreddit placeholder="Photography" (keydown.enter)="passSubreddit(subreddit.value)">
         </mat-form-field>
     </div>
-    <app-post-item *ngFor="let post of posts" [post]='post' (permalink)="fetchThread($event)"></app-post-item>
-    <div class="page-buttons">
+    
+    <div class="grid" *ngIf="ifFirstLoad">
+        <app-post-item-shimmer *ngFor="let postItemShimmer of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"></app-post-item-shimmer>
+    </div>
+
+    
+    <div class="grid" *ngIf="!ifFirstLoad">
+        <app-post-item *ngFor="let post of posts" 
+        [score]="post.score"
+        [author]="post.author"
+        [subreddit]="post.subreddit"
+        [title]="post.title"
+        [selftext]="post.selftext"
+        [thumbnail]="post.thumbnail"
+        [created]="post.created"
+        [numComments]="post.num_cumments"
+        [link]="post.permalink"
+        (permalink)="fetchThread($event)"></app-post-item>
+    </div>
+
+
+
+    <!-- <div class="page-buttons">
         <span (click)="fetchBefore()" class="material-icons">arrow_back</span>
         <!-- <button *ngIf="before != 'first'"  class="prev">Previous</button> -->
         <div></div>
         <span (click)="fetchAfter()" class="material-icons forward">arrow_forward</span>
         <!-- <button (click)="fetchAfter()" class="next">Next</button> -->
-    </div>
+    </div> -->
 </div>

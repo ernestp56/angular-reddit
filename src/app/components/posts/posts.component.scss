@@ -11,6 +11,13 @@
     grid-template-columns: 1fr 8fr 1fr;
 }
 
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+}
+
 .material-icons {
     font-size: 2em;
     -webkit-user-select: none; /* Chrome/Safari */        

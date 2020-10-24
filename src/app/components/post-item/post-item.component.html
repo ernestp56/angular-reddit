@@ -1,16 +1,16 @@
 <div class="post-item">
-    <div class="upvotes">{{ post.score }}</div>
+    <div class="upvotes">{{ score }}</div>
     <div class="post-content" (click)="getPermalink()">
         <div class="post-header">
-            <div>Posted by {{ post.author }} on {{ post.created * 1000 | date }}</div>
-            <div class="subreddit">r/{{ post.subreddit }}</div>
+            <div>Posted by {{ author }} on {{ created * 1000 | date }}</div>
+            <div class="subreddit">r/{{ subreddit }}</div>
         </div>
         <div class="post-text">
-            <div class="post-title">{{ post.title }}</div>
-            <div class="post-selftext" *ngIf="post.selftext">{{ post.selftext.substr(0, 200) }}</div>
+            <div class="post-title">{{ title }}</div>
+            <div class="post-selftext" *ngIf="selftext">{{ selftext.substr(0, 200) }}</div>
         </div>
-        <img *ngIf="post.thumbnail.includes('jpg')" src="{{ post.thumbnail }}" />
-        <div class="post-comments">{{ post.num_comments }} Comments</div>
+        <img *ngIf="thumbnail.includes('jpg')" src="{{ thumbnail }}" />
+        <div class="post-comments">{{ numComments }} Comments</div>
     </div>
 
 </div>
