@@ -27,7 +27,8 @@ export class PostsComponent implements OnInit {
     this.callService(null, null);
   }
 
-  onChangeLimit(): void {
+  onChangeLimit(limit): void {
+    this.limit = limit;
     this.callService(null, this.after);
   }
 

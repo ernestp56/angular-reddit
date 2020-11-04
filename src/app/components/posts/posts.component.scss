@@ -1,9 +1,9 @@
 .posts-wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    max-width: 640px;
+    max-width: 700px;
     grid-gap: 1em;
-    margin: 3em auto;
+    margin: 3em auto 0;
 }
 
 .page-buttons {
@@ -36,7 +36,7 @@
 
 .posts-forms {
     display: grid;
-    grid-template-columns: 4fr 0.5fr 4fr;
+    grid-template-columns: 1fr;
 }
 
 .posts-forms > mat-form-field {
@@ -51,9 +51,16 @@
     background-color: #fff;
 }
 
+.subreddit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 .subreddit-container {
     max-width: 640px;
-    margin: 0 auto;
+    // margin: 0 auto;
 }
 
 .subreddit-title {
@@ -64,6 +71,17 @@
 
 .subreddit-subtext {
     font-size: 0.8em;
+}
+
+.select-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: end;
+    justify-items: end;
+}
+
+.select-grid > * {
+    width: 80px;
 }
 
 @media (max-width: 600px) {
