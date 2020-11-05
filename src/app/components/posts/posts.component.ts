@@ -29,7 +29,7 @@ export class PostsComponent implements OnInit {
 
   onChangeLimit(limit): void {
     this.limit = limit;
-    this.callService(null, this.after);
+    this.callService(null, this.before);
   }
 
   fetchBefore(): void {
