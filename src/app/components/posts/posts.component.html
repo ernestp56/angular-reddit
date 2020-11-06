@@ -1,9 +1,12 @@
 <app-thread *ngIf="showThread" (showThread)="closeThread($event)" [permalink]='permalink'></app-thread>
 <div class="subreddit-navbar">
     <div class="subreddit-grid">
-        <div class="subreddit-container">
-            <div *ngIf="posts[0]" class="subreddit-title">{{ posts[0].data.subreddit | titlecase }}</div>
-            <div *ngIf="posts[0]" class="subreddit-subtext">r/{{ posts[0].data.subreddit }} </div>
+        <div *ngIf="subreddit != undefined" class="subreddit-container">
+            <div *ngIf="subreddit.length > 0" class="subreddit-title">{{ subreddit | titlecase }}</div>
+            <div *ngIf="subreddit.length > 0" class="subreddit-subtext">r/{{ subreddit }} </div>
+
+            <div *ngIf="!subreddit.length > 0" class="subreddit-title">Popular posts</div>
+            <div *ngIf="!subreddit.length > 0" class="subreddit-subtext">main page of reddit</div>
         </div>
         <div class=subreddit-posts>
             <form appearance="fill" class="select-grid">

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostsService {
-  postsUrl = 'https://www.reddit.com/r/';
+  postsUrl = 'https://www.reddit.com/';
 
   constructor(private http: HttpClient) { }
 

@@ -14,7 +14,7 @@ export class PostsComponent implements OnInit {
   count = '';
   permalink: string | null = null;
   showThread = false;
-  subreddit = 'wallstreetbets';
+  subreddit = '';
   @Output() disabled = new EventEmitter<boolean>();
 
   constructor(private postService: PostsService) { }
@@ -48,6 +48,7 @@ export class PostsComponent implements OnInit {
     },
     err => console.log(alert(err.message)),
     );
+    console.log(this.subreddit)
   }
 
   setBeforeAfter(before: string | null, after: string | null): void {
@@ -71,8 +72,13 @@ export class PostsComponent implements OnInit {
   }
 
   passSubreddit(subreddit): void {
-    this.subreddit = subreddit;
+    if (subreddit) {
+      this.subreddit = 'r/' + subreddit;
+    } else {
+      this.subreddit = '';
+    }
     this.fetchPosts();
+    this.posts = [];
   }
 
 }
