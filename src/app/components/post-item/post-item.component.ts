@@ -21,7 +21,7 @@ export class PostItemComponent implements OnInit {
 
   openLink(event: any): void {
     event.stopPropagation();
-    window. open(this.post.url_overridden_by_dest, "_blank");
+    window.open(this.post.url_overridden_by_dest, '_blank');
   }
 
 }
