@@ -19,4 +19,9 @@ export class PostItemComponent implements OnInit {
     this.permalink.emit(this.post.permalink);
   }
 
+  openLink(event: any): void {
+    event.stopPropagation();
+    window. open(this.post.url_overridden_by_dest, "_blank");
+  }
+
 }

@@ -8,8 +8,13 @@
         <div class="post-text">
             <div class="post-title">{{ post.title }}</div>
             <div class="post-selftext" *ngIf="post.selftext">{{ post.selftext.substr(0, 200) }}</div>
+            <a *ngIf="post.url_overridden_by_dest" href="{{ post.url_overridden_by_dest }}" target="_blank" class="post-link"><div *ngIf="post.url_overridden_by_dest.includes('jpg')">{{ post.url_overridden_by_dest.substr(12,14) }}...</div></a>
         </div>
-        <img *ngIf="post.thumbnail.includes('jpg')" src="{{ post.thumbnail }}" />
+        <div *ngIf="post.url_overridden_by_dest">
+            <div *ngIf="!post.url_overridden_by_dest.includes('jpg')" (click)="openLink($event)" ><img *ngIf="post.thumbnail.includes('jpg')" src="{{ post.thumbnail }}" class="img-container"/></div>
+        </div>
+        
+        <div *ngIf="post.url_overridden_by_dest" class="img-container-full"><img *ngIf="post.url_overridden_by_dest.includes('jpg')" src="{{ post.url_overridden_by_dest }}" class="full-screen-img"/></div>
         <div class="post-comments">{{ post.num_comments }} Comments</div>
     </div>
 

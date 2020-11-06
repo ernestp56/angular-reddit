@@ -1,7 +1,8 @@
 img {
-    border-radius: 5px;
-    margin: 0.5em;
+    margin: 0.5em 0.5em;
+    border-bottom: 5px;
 }
+
 .post-item {
     display: grid;
     grid-template-columns: 1fr 15fr;
@@ -10,12 +11,25 @@ img {
     border-radius: 5px;
 }
 
+
 .post-header {
     display: grid;
     grid-template-columns: 3fr 1fr;
     padding: 5px;
     font-size: 0.8em;
     font-weight: lighter!important;
+}
+
+.img-container-full {
+    grid-column: 1/3;
+    margin: 0 auto;
+    padding: 0 auto;
+    border-radius: 5px;
+}
+
+.full-screen-img {
+    max-width: 100%;
+
 }
 
 .subreddit {
@@ -80,6 +94,15 @@ img {
     text-align: center;
     font-size: x-small;
     word-wrap: break-word;
+}
+
+.img-container {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+.post-link {
+    font-size: small;
 }
 
 

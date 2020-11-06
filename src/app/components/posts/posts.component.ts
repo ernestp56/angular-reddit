@@ -14,7 +14,7 @@ export class PostsComponent implements OnInit {
   count = '';
   permalink: string | null = null;
   showThread = false;
-  subreddit = 'photography';
+  subreddit = 'wallstreetbets';
   @Output() disabled = new EventEmitter<boolean>();
 
   constructor(private postService: PostsService) { }
