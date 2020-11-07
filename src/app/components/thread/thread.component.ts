@@ -28,4 +28,9 @@ export class ThreadComponent implements OnInit {
     this.showThread.emit(false);
   }
 
+  openLink(event: any): void {
+    event.stopPropagation();
+    window.open(this.post.url_overridden_by_dest, '_blank');
+  }
+
 }

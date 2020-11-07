@@ -13,26 +13,29 @@ export class CommentComponent implements OnInit {
   replies: any | null = {};
   kind: string;
   id: string;
-  extraComments: any = {};
+  extraComments: any;
 
   constructor(private moreCommentsService: MoreCommentsService) { }
 
   ngOnInit(): void {
     this.kind = this.comment.kind;
+    // console.log(this.comment);
     this.comment = this.comment.data;
     if (this.kind !== 'more') {
-      console.log(this.comment)
-      this.replies = this.comment.replies ? this.comment.replies.data.children : null;
+      if (this.comment) {
+        this.replies = this.comment.replies ? this.comment.replies.data.children : null;
+      }
     } else {
-      this.replies = this.comment.replies ? this.comment.replies.data.children : null;
+      this.replies = null;
     }
   }
 
   fetchMoreComments(): void {
-    console.log(this.comment);
+    // console.log(this.comment);
     this.moreCommentsService.getData(this.permalink, this.comment.id).subscribe(response => {
-      this.extraComments = response[1].data.children;
-      console.log(response[1].data);
+      // console.log(Object(response[1].data.children).length > 1 ? "more than one" : "one");
+      this.extraComments = response[1].data.children[0];
+      this.replies = null;
       this.kind = response[1].kind;
     });
   }
