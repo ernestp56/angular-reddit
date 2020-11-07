@@ -17,6 +17,9 @@
                     <div *ngIf="post" class="thread-container" [innerHTML]="post.selftext | marked"></div>
                 </div>
             </div>
+            <div *ngIf="post.url_overridden_by_dest">
+                <div *ngIf="!post.url_overridden_by_dest.includes('jpg')" (click)="openLink($event)" ><img *ngIf="post.thumbnail.includes('jpg')" src="{{ post.thumbnail }}" class="img-container"/></div>
+            </div>
             <div *ngIf="post.url_overridden_by_dest" class="img-container-full"><img *ngIf="post.url_overridden_by_dest.includes('jpg')" src="{{ post.url_overridden_by_dest }}" class="full-screen-img"/></div>
             <hr class="bottom-line">
             <div class="comments-wrapper">
