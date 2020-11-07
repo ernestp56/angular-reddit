@@ -11,7 +11,6 @@ export class MoreCommentsService {
   constructor(private http: HttpClient) { }
 
   getData(permalink: string, id: string): Observable<any> {
-    console.log(permalink);
     return this.http.get<any>(this.baseUrl + '/' + permalink + id + '.json');
   }
 }

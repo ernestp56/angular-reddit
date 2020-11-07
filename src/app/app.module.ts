@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ThreadComponent } from './components/thread/thread.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { MarkedPipe } from './pipes/marked.pipe';
+import { NumkeysComponent } from './pipes/numkeys.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MarkedPipe } from './pipes/marked.pipe';
     PostItemComponent,
     ThreadComponent,
     CommentComponent,
-    MarkedPipe
+    MarkedPipe,
+    NumkeysComponent
   ],
   imports: [
     BrowserModule,

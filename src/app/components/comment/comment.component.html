@@ -9,7 +9,14 @@
         <app-comment *ngFor="let comment of replies" [comment]="comment" [permalink]='permalink'></app-comment>
     </div>
     <div *ngIf="kind === 'more'" class="continue-to-thread" (click)="fetchMoreComments()">Continue to this thread -></div>
-    <div *ngIf="extraComments" class="comments-more">
-        <app-comment *ngFor="let comment of extraComments" [comment]="comment" [permalink]='permalink' class="extra-comments"></app-comment>
+    <div *ngIf="extraComments">
+        <div *ngIf="(extraComments | numkeys) > 1" class="comments-more">
+            <app-comment *ngFor="let comment of extraComments" [comment]="comment" [permalink]='permalink' class="extra-comments"></app-comment>
+        </div>
+
+        <!-- TODO: the case below doesn't always work. it's about the structure, the id is null so it is most likely at a higher level of hierarchy -->
+        <div *ngIf="(extraComments | numkeys) === 1" class="comments-more">
+            <app-comment [comment]="extraComments" [permalink]='permalink' class="extra-comments"></app-comment>
+        </div>
     </div>
 </div>

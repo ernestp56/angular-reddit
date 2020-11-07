@@ -48,7 +48,6 @@ export class PostsComponent implements OnInit {
     },
     err => console.log(alert(err.message)),
     );
-    console.log(this.subreddit)
   }
 
   setBeforeAfter(before: string | null, after: string | null): void {

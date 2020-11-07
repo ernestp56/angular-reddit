@@ -121,4 +121,21 @@
     .post-wrapper {
         padding-left: 1em;
     }
+
+    
+}
+.img-container-full {
+    grid-column: 1/2;
+    margin: 0.5em;
+
+}
+
+.full-screen-img {
+    max-width: 100%;
+}
+
+@media (min-width: 600px) {
+    .img-container-full {
+        grid-column: 2/3;
+    }
 }
