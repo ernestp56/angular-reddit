@@ -1,11 +1,15 @@
 <div class="comment-container">
-    <div>
+    <div *ngIf="comment.author">
         <div class="upvotes">{{ comment.score }}</div>
         <div class="vl"></div>
     </div>
-    <div>
+    <div *ngIf="comment.author">
         <div class="comment-header">Posted by {{ comment.author }} on {{ comment.created * 1000 | date }}</div>
         <div class="comment-text" [innerHTML]="comment.body | marked"></div>
-        <app-comment *ngFor="let comment of replies" [comment]="comment"></app-comment>
+        <app-comment *ngFor="let comment of replies" [comment]="comment" [permalink]='permalink'></app-comment>
+    </div>
+    <div *ngIf="kind === 'more'" class="continue-to-thread" (click)="fetchMoreComments()">Continue to this thread -></div>
+    <div *ngIf="extraComments" class="comments-more">
+        <app-comment *ngFor="let comment of extraComments" [comment]="comment" [permalink]='permalink' class="extra-comments"></app-comment>
     </div>
 </div>

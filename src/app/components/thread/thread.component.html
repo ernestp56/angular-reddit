@@ -19,7 +19,7 @@
             </div>
             <hr class="bottom-line">
             <div class="comments-wrapper">
-                <app-comment *ngFor="let comment of comments" [comment]="comment" ></app-comment>
+                <app-comment *ngFor="let comment of comments" [permalink]='permalink' [comment]="comment" ></app-comment>
 
             </div>
         </div>
