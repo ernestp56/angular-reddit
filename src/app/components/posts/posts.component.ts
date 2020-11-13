@@ -48,8 +48,8 @@ export class PostsComponent implements OnInit {
         this.posts.push(response.data.children[i]);
       }
       this.after = "t3_" + response.data.children[response.data.children.length - 1].data.id;
-      console.log("test");
-      console.log(this.after);
+      // console.log("test");
+      // console.log(this.after);
       this.busy = false;
     },
     err => console.log(alert(err.message)),
@@ -60,7 +60,7 @@ export class PostsComponent implements OnInit {
     this.postService.getData(this.subreddit, this.limit, before, after, this.count).subscribe(response => {
       this.posts = response.data.children;
       this.after = "t3_" + response.data.children[response.data.children.length - 1].data.id;
-      console.log(this.after)
+      // console.log(this.after)
     },
     err => console.log(alert(err.message)),
     );
