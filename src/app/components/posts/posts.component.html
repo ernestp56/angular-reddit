@@ -10,7 +10,7 @@
         </div>
         <div class=subreddit-posts>
             <form appearance="fill" class="select-grid">
-                <label class="subreddit-subtext">No. of posts</label>
+                <label class="subreddit-subtext">No. of posts fetched</label>
                 <select #mySelect (change)="onChangeLimit(mySelect.value)" [value]="10">
                 <option value="5">5</option>
                 <option value="10">10</option>
@@ -20,21 +20,32 @@
         </div>
     </div>
 </div>
-<div class="posts-wrapper">
-    <!-- <button (click)="onChangeLimit()">Test</button> -->
-    <div class="posts-forms">
-        <mat-form-field  class="custom-search" appearance="fill">
-            <mat-label>Search subreddit to view</mat-label>
-            <input matInput placeholder="Ex. Technology" #subreddit placeholder="Photography" (keydown.enter)="passSubreddit(subreddit.value)">
-        </mat-form-field>
+<div class="posts-container">
+    <div class="posts-wrapper"
+    infiniteScroll
+    [infiniteScrollDistance]="1"
+    [infiniteScrollUpDistance]="1.5"
+    [infiniteScrollThrottle]="50"
+    [fromRoot]="true"
+    (scrolled)="onScroll()">
+        <!-- <button (click)="onChangeLimit()">Test</button> -->
+        <div class="posts-forms">
+            <mat-form-field  class="custom-search" appearance="fill">
+                <mat-label>Search subreddit to view</mat-label>
+                <input matInput placeholder="Ex. Technology" #subreddit placeholder="Photography" (keydown.enter)="passSubreddit(subreddit.value)">
+            </mat-form-field>
+            
+        </div>
+        <app-post-item *ngFor="let post of posts" [post]='post' (permalink)="fetchThread($event)"></app-post-item>
+
         
-    </div>
-    <app-post-item *ngFor="let post of posts" [post]='post' (permalink)="fetchThread($event)"></app-post-item>
-    <div class="page-buttons">
-        <span (click)="fetchBefore()" class="material-icons">arrow_back</span>
-        <!-- <button *ngIf="before != 'first'"  class="prev">Previous</button> -->
-        <div></div>
-        <span (click)="fetchAfter()" class="material-icons forward">arrow_forward</span>
-        <!-- <button (click)="fetchAfter()" class="next">Next</button> -->
+        <!-- <div class="page-buttons">
+            <span (click)="fetchBefore()" class="material-icons">arrow_back</span>
+            <!-- <button *ngIf="before != 'first'"  class="prev">Previous</button> -->
+            <!-- <div></div>
+            <span (click)="fetchAfter()" class="material-icons forward">arrow_forward</span> -->
+            <!-- <button (click)="fetchAfter()" class="next">Next</button> 
+        </div> -->
+        <div ng-show='busy'>Loading data...</div>
     </div>
 </div>

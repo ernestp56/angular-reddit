@@ -1,9 +1,16 @@
+.posts-container {
+    height: 100%;
+    overflow-y: scroll;
+}
+
 .posts-wrapper {
     display: grid;
     grid-template-columns: 1fr;
     max-width: 700px;
     grid-gap: 1em;
-    margin: 3em auto 0;
+    margin: 3em auto 0 auto;
+    // height: calc(100vh - 8em);
+    // max-height: 80vh;    
 }
 
 .page-buttons {
@@ -81,7 +88,21 @@
 }
 
 .select-grid > * {
-    width: 80px;
+    width: 130px;
+}
+
+@media (max-width: 350px) {
+    .subreddit-grid {
+        grid-template-columns: 1fr 100px;
+    }
+
+    .select-grid > * {
+        width: 90px;
+    }
+
+    .subreddit-subtext {
+        font-size: 0.6em;
+    }
 }
 
 @media (max-width: 600px) {

@@ -15,6 +15,7 @@ export class PostsComponent implements OnInit {
   permalink: string | null = null;
   showThread = false;
   subreddit = '';
+  busy: boolean;
   @Output() disabled = new EventEmitter<boolean>();
 
   constructor(private postService: PostsService) { }
@@ -32,31 +33,37 @@ export class PostsComponent implements OnInit {
     this.callService(null, this.before);
   }
 
-  fetchBefore(): void {
-    this.callService(this.before, null);
-  }
+  // fetchBefore(): void {
+  //   this.callService(this.before, null);
+  // }
 
-  fetchAfter(): void {
-    this.callService(null, this.after);
-  }
+  // fetchAfter(): void {
+  //   this.callService(null, this.after);
+  // }
 
-  callService(before: string | null, after: string | null): void {
-    this.postService.getData(this.subreddit, this.limit, before, after, this.count).subscribe(response => {
-      this.setBeforeAfter(response.data.before, response.data.after);
-      this.setCount(response.data.children.length);
-      this.posts = response.data.children;
+  onScroll(): void {
+    this.busy = true;
+    this.postService.getData(this.subreddit, this.limit, null, this.after, this.count).subscribe(response => {
+      for (var i = 0; i < response.data.children.length; i++) {
+        this.posts.push(response.data.children[i]);
+      }
+      this.after = "t3_" + response.data.children[response.data.children.length - 1].data.id;
+      console.log("test");
+      console.log(this.after);
+      this.busy = false;
     },
     err => console.log(alert(err.message)),
     );
   }
 
-  setBeforeAfter(before: string | null, after: string | null): void {
-    this.before = before ? before : 'first';
-    this.after = after;
-  }
-
-  setCount(count: number): void {
-    this.count = count.toString();
+  callService(before: string | null, after: string | null): void {
+    this.postService.getData(this.subreddit, this.limit, before, after, this.count).subscribe(response => {
+      this.posts = response.data.children;
+      this.after = "t3_" + response.data.children[response.data.children.length - 1].data.id;
+      console.log(this.after)
+    },
+    err => console.log(alert(err.message)),
+    );
   }
 
   fetchThread(permalink: string): void {

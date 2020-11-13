@@ -16,6 +16,7 @@ import { ThreadComponent } from './components/thread/thread.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { MarkedPipe } from './pipes/marked.pipe';
 import { NumkeysComponent } from './pipes/numkeys.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NumkeysComponent } from './pipes/numkeys.component';
     MatSelectModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
